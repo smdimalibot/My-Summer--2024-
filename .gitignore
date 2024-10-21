@@ -1,9 +1,9 @@
 # ignore directories
 /uploads
-/upgrades
+/upgrade
 
 # ignore these plugins
-wp-content/plugins/hello.php
+/plugins/debug-bar
 
 # ignore specific themes
 wp-content/themes/twenty*/
