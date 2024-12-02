@@ -164,6 +164,14 @@ p {
     transition: color 0.3s;
 }
 
+.custom-blog-home h1 {
+    font-size: 2.5em;
+    font-family: 'Courier New', Courier, monospace;
+}
+.custom-single-post h1 {
+    color: #007acc;
+}
+
 .site-navigation a:hover, .site-footer a:hover {
     color: #fff;
 }
