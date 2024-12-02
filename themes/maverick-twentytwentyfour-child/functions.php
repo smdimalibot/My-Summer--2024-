@@ -1,6 +1,7 @@
 <?php
 function maverick_twentytwentyfour_enqueue_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('child-style', get_stylesheet_uri(), array('parent-style'));
 }
 add_action('wp_enqueue_scripts', 'maverick_twentytwentyfour_enqueue_styles');
 
@@ -22,7 +23,6 @@ function my_customizer_settings($wp_customize) {
         'default' => '#000000',
         'transport' => 'refresh',
     ));
-
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'my_custom_title_color_control', array(
         'label' => __('Title Color', 'textdomain'),
         'section' => 'my_custom_settings',
@@ -33,7 +33,6 @@ function my_customizer_settings($wp_customize) {
         'default' => '#0000ff',
         'transport' => 'refresh',
     ));
-
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'my_custom_link_color_control', array(
         'label' => __('Link Color', 'textdomain'),
         'section' => 'my_custom_settings',
@@ -44,7 +43,6 @@ function my_customizer_settings($wp_customize) {
         'default' => '#000000',
         'transport' => 'refresh',
     ));
-
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'my_custom_paragraph_color_control', array(
         'label' => __('Paragraph Color', 'textdomain'),
         'section' => 'my_custom_settings',
@@ -55,7 +53,6 @@ function my_customizer_settings($wp_customize) {
         'default' => '#000000',
         'transport' => 'refresh',
     ));
-
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'my_custom_list_color_control', array(
         'label' => __('List Item Color', 'textdomain'),
         'section' => 'my_custom_settings',
@@ -66,7 +63,6 @@ function my_customizer_settings($wp_customize) {
         'default' => '#ffffff',
         'transport' => 'refresh',
     ));
-
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'my_custom_background_color_control', array(
         'label' => __('Background Color', 'textdomain'),
         'section' => 'my_custom_settings',
@@ -98,4 +94,3 @@ function my_customizer_css() {
 }
 add_action('wp_head', 'my_customizer_css');
 ?>
-
