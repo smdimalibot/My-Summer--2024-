@@ -100,4 +100,11 @@ add_filter('block_template_part_visibility', function($visible, $context) {
     }
     return false;
 }, 10, 2);
+
+function enqueue_logged_in_user_styles() {
+    if (is_user_logged_in()) {
+        wp_enqueue_style('logged-in-users-style', get_stylesheet_directory_uri() . '/logged-in-users.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_logged_in_user_styles');
 ?>
