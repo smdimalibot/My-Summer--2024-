@@ -9,12 +9,16 @@ Theme URI: https://wordpress.org/themes/twentytwentyfour/
 */
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     line-height: 1.6;
     background-color: #f9f9f9;
-    color: #333;
+    color: #dd9933;
     margin: 0;
     padding: 0;
+}
+
+body.single-post {
+    background-color: #0e0038;
 }
 
 .blog-home {
@@ -46,13 +50,13 @@ body {
 .blog-post h2 {
     margin: 15px;
     font-size: 1.5rem;
-    color: #444;
+    color: #dd9933;
     text-align: center;
 }
 
 .blog-post p {
     padding: 0 15px 15px 15px;
-    color: #666;
+    color: #dd9933;
     text-align: justify;
 }
 
@@ -68,14 +72,14 @@ body {
 .single-post h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #333;
+    color: #dd9933;
     text-align: center;
 }
 
 .single-post .post-meta {
     text-align: center;
     font-size: 0.9rem;
-    color: #777;
+    color: #dd9933;
     margin-bottom: 20px;
 }
 
@@ -94,12 +98,11 @@ body {
 .single-post .post-content {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #555;
+    color: #dd9933;
     margin-bottom: 40px;
 }
 
 .single-post .related-posts {
-    background-color: #f1f1f1;
     padding: 20px;
     border-radius: 10px;
 }
@@ -138,6 +141,10 @@ a.button, .button {
 
 a.button:hover, .button:hover {
     background-color: #005999;
+}
+
+a {
+    text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
