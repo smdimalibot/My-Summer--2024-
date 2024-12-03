@@ -75,22 +75,29 @@ function my_customizer_css() {
     ?>
     <style type="text/css">
         body {
-            background-color: <?php echo get_theme_mod('my_custom_background_color', '#ffffff'); ?>;
+            background-color: <?php echo esc_attr(get_theme_mod('my_custom_background_color', '#ffffff')); ?>;
         }
         h1, h2, h3, h4, h5, h6 {
-            color: <?php echo get_theme_mod('my_custom_title_color', '#000000'); ?>;
+            color: <?php echo esc_attr(get_theme_mod('my_custom_title_color', '#000000')); ?>;
         }
         a {
-            color: <?php echo get_theme_mod('my_custom_link_color', '#0000ff'); ?>;
+            color: <?php echo esc_attr(get_theme_mod('my_custom_link_color', '#0000ff')); ?>;
         }
         p {
-            color: <?php echo get_theme_mod('my_custom_paragraph_color', '#000000'); ?>;
+            color: <?php echo esc_attr(get_theme_mod('my_custom_paragraph_color', '#000000')); ?>;
         }
         li {
-            color: <?php echo get_theme_mod('my_custom_list_color', '#000000'); ?>;
+            color: <?php echo esc_attr(get_theme_mod('my_custom_list_color', '#000000')); ?>;
         }
     </style>
     <?php
 }
 add_action('wp_head', 'my_customizer_css');
+
+add_filter('block_template_part_visibility', function($visible, $context) {
+    if (is_front_page() || is_page('your-page-slug')) {
+        return true;
+    }
+    return false;
+}, 10, 2);
 ?>
